@@ -6,6 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
+sed -i '/\[multilib\]/,/Include/s/^[ ]*#//' /etc/pacman.conf
 pacman -Syu --noconfirm \
     lib32-mesa \
     lib32-sdl2 \
